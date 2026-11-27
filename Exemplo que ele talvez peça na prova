@@ -1,0 +1,17 @@
+AVALIAÇÃO DE BANCO DE DADOS — PROF. TERGOLINA
+Observe o modelo conceitual abaixo e escreva o script SQL completo no verso da folha contendo:
+1. Criação e seleção do Banco de Dados (escola);
+2. Criação das tabelas com seus respectivos atributos, tipos de dados, chave primária e chave estrangeira;
+3. Inserção de 2 registros em cada tabela;
+4. Atualização (UPDATE) do nome de um curso;
+5. Exclusão (DELETE) de um aluno;
+6. Exibição (SELECT) de todos os registros das duas tabelas.
+Tabela: cursos
+• id_curso — INT (PK, AI)
+• nome_curso — VARCHAR(100)
+• mensalidade — DECIMAL(8,2)
+Tabela: alunos
+• id_aluno — INT (PK, AI)
+• nome — VARCHAR(120)
+• data_nascimento — DATE
+• id_curso — INT (FK -> cursos.id_curso)
