@@ -1,0 +1,36 @@
+CREATE database entretenimento;
+USE entretenimento
+
+CREATE TABLE tabela_livros (
+  id_livros INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(400),
+  preço decimal (10,2)
+);
+
+CREATE TABLE tabela_filmes (
+  id_filmes INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(400),
+  preco decimal(10,2),
+  Lancamento INT,
+  id_livros INT,
+  FOREIGN KEY (id_livros) REFERENCES tabela_livros(id_livros)
+);
+
+INSERT INTO tabela_livros (nome, preço) VALUES
+('Jujutsu Kaisen', 35.00),
+('Dragon ball', 35.00);
+
+INSERT INTO tabela_filmes (nome, preco, Lancamento, id_livros) VALUES
+('Obsessão', 20.00, 2026, 1),
+('Devorador de estrelas', 20.00, 2026, 2);
+
+UPDATE tabela_livros
+SET nome = 'Chainsaw man'
+WHERE id_livros = 1;
+
+DELETE FROM tabela_filmes
+WHERE id_filmes = 2;
+
+SELECT * FROM tabela_livros;
+SELECT * FROM tabela_filmes;
+
