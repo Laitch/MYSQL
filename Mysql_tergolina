@@ -10,7 +10,7 @@ insert into cliente (nome , idade ) values
 ('Felipe', 67), 
 ('Matteo', 18);
 
-select * from cliente;
+
 
 Update cliente 
 set nome = 'Bolsonaro', idade= 23
@@ -26,9 +26,12 @@ Create table juliano (
  foreign key (id_cliente) references cliente(id_usuario) 
  );
 
- insert into cliente (nome , idade, id_cliente ) values
+ insert into cliente (nome , idade) values
 ('aa' , 18), 
 ('bb', 67), 
 ('cc', 18);
 
- select * from juliano;
+DELETE FROM cliente WHERE id_usuario = 3;
+
+select * from juliano;
+select * from cliente;
