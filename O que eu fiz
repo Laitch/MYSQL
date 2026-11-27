@@ -1,0 +1,37 @@
+CREATE TABLE tabela_livros (
+
+Id_livros INT auto_increment PRIMARY KEY,
+Nome VARCHAR (400),
+Lançamento INT,
+Preço DECIMAL (10,2) 
+
+);
+
+CREATE TABLE tabela_filmes (
+
+Id_filmes INT auto_increment PRIMARY KEY,
+Nome VARCHAR (400),
+Lançamento INT,
+Preço DECIMAL (10,2),
+Id_livros INT,
+FOREIGN KEY (Id_livros) REFERENCES tabela_livros (Id_livros)
+
+);
+
+INSERT INTO tabela_livros (Nome, lançamento, Preço) VALUES
+('Jujutsu Kaisen', 2018, 35.00),
+('Dragon Ball', 1998, 35.00);
+
+INSERT INTO tabela_filmes (Nome, Lançamento, Preço, Id_livros) VALUES
+('Chainsaw Man Reze Movie', 2018, 20.00, 1),
+('Dragon Ball Evolution', 2009, 20.00, 2);
+
+UPDATE tabela_livros
+SET Nome = 'Chainsaw Man'
+WHERE Id_livros = 1;
+
+DELETE FROM tabela_filmes 
+WHERE Id_filmes = 2;
+
+SELECT * FROM tabela_livros;
+SELECT * FROM tabela_filmes;
